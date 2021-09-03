@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #D3D3D3;">
+</canvas>
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.globalCompositeOperation = 'destination-out';
+ctx.beginPath();
+function rectangle(height, width, n){
+    var h=20, v=5, H=height, V=width;
+    for(let i=0; i<n; i++){
+    	ctx.fillStyle = "rgba(128, 0, 128, 0.15)";
+        ctx.rect(h, v, H, V);
+        ctx.fillRect(h, v, H, V);
+        ctx.fill();
+        h = h+10;
+        v = v+10;
+        H = H - 20;
+        V = V - 20;  
+    }
+    ctx.stroke();
+}
+ctx.globalCompositeOperation = 'source-over';
+//width height and number of rectangle
+rectangle(260, 140, 5);
+</script> 
+</body>
+</html>
