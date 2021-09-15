@@ -10,11 +10,12 @@ let n = arr.length;
 function printLeader(arr, n) {
     for (let i = 0; i < n; i++) {
         let j;
-        for(j = i+1; j < n; j++) {
-            if (arr[i] <=arr[j])
+        for (j = i + 1; j < n; j++) {
+            // check the value is less j value so travers the right side
+            if (arr[i] <= arr[j])
                 break;
         }
-        if(j == n)
+        if (j == n)
             console.log(arr[i], " ");
     }
 }
